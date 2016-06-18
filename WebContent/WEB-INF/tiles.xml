@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE tiles-definitions PUBLIC 
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+<tiles-definitions> 
+    <definition name="baseLayout" template="/pages/test.jsp"> 
+        <put-attribute name="title" value="Banks 24" />
+        <put-attribute name="header" value="/pages/header.jsp" /> 
+        <!--  <put-attribute name="left" value="/pages/left.jsp" /> -->
+        <put-attribute name="footer" value="/pages/footer.jsp" /> 
+    </definition>
+    
+    <definition name="/home.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/home.jsp" />
+    </definition>
+    
+    <definition name="/user.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/userCreate.jsp" />
+    </definition>
+    <definition name="/member.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/memberCreate.jsp" />
+    </definition>
+    
+    <definition name="/userview.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/userview.jsp" />
+    </definition>
+    <definition name="/memberview.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/memberview.jsp" />
+    </definition>
+    
+    </tiles-definitions>

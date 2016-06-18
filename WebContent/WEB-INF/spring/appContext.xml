@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+		
+<bean id="loginaction" class="com.e_society.action.LoginAction">
+        <property name="userdao" ref="userdao" />
+    </bean>
+    <bean id="userdao" class="com.e_society.impl.UserDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="useraction" class="com.e_society.action.UserAction">
+        <property name="userdao" ref="userdao" />
+        <property name="usertypedao" ref="usertypedao"></property>
+        <property name="flatdetailsdao" ref="flatdetailsdao"></property>
+        <property name="memberDao" ref="memberdao" />
+        
+    </bean>
+    <bean id="memberaction" class="com.e_society.action.MemberAction">
+        <property name="memberdao" ref="memberdao" />
+     	 <property name="flatdetailsdao" ref="flatdetailsdao"></property>
+     	 <property name="userdao" ref="userdao" />
+     	    </bean>
+    <bean id="memberdao" class="com.e_society.impl.MemberDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="usertypedao" class="com.e_society.impl.UserTypeDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="flatdetailsdao" class="com.e_society.impl.FlatDetailsDAOImpl">
+    <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="sessionFactory"
+        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </bean>
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/banks24" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+    </bean>
+    
+	<!-- <tx:annotation-driven /> -->
+	<bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+
+</beans>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 	<constant name="struts.devMode" value="true" />
+	
+	<package name="default" namespace="/" extends="struts-default,json-default">
+		
+ 	<result-types>
+    		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+    		<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+    	</result-types>
+    	
+     <action name="ajaxAction" class="ajaxAction">
+		   <result type="json">
+		        <param name="excludeNullProperties">true</param>
+		        <param name="noCache">true</param>
+		   </result>
+	   </action>
+		<action name="loginAction" class="loginaction">
+		    <result name="success" type="tiles">/home.tiles</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="logout" class="loginaction" method="logout">
+		    <result name="success">/logout.jsp</result>
+		</action>
+		<action name="createUserAction" class="useraction">
+		    <result name="success" type="tiles">/user.tiles</result>
+		</action>
+		<action name="addUserAction" class="useraction" method="adduser">
+		    <result name="success" type="tiles">/user.tiles</result>
+		</action>
+		<action name="viewUserAction" class="useraction" method="viewuser">
+		    <result name="success" type="tiles">/userview.tiles</result>
+		</action>
+		<action name="createMemberAction" class="memberaction">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
+		<action name="addMemberAction" class="memberaction" method="addMember">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
+		<action name="viewMemberAction" class="memberaction" method="viewMember">
+		    <result name="success" type="tiles">/memberview.tiles</result>
+		</action>
+		<action name="editMemberAction" class="memberaction" method="editMember">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
+		<action name="getCityAjax" class="com.banks24.action.UserAction" method="getCity">
+		  <result name="success" type="json"></result> 
+		</action>
+ 		
+		<action name="ajaxdemo"  
+                class="com.test.action.Test" 
+                method="myCustomMethod">
+  <result name="success" type="json"></result>
+    </action>
+ 
+	</package>
+ 
+</struts>
