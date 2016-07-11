@@ -21,7 +21,7 @@ ol2">
       <div id="respond">
         <form action="addMemberAction"  method="post" id="formSelectReload">
         <p>
-            <s:select name="memberListdropdown" id="memberListdropdown" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <s:select name="memberId" id="memberId" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="memberListdropdown"><small> Select Member (required)</small></label>
           </p>
             <p>

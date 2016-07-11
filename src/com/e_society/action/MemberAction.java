@@ -70,11 +70,10 @@ public class MemberAction implements ModelDriven<Member> {
 	public String addMember()
 	{
 		//user.setUserId("C101");
-		String userid=member.getWing()+member.getFlatNo();
-		user.setUserId(userid);
-		String memberId=member.getFirstname()+"."+member.getLastname();
+		
+		String memberId=member.getMemberId();
 		//user.setMemberId(memberId);
-		member.setMemberId(memberId);
+		//member.setMemberId(memberId);
 		//member.setUser(user);
 		memberdao.addmember(member);
 		//userdao.adduser(user);

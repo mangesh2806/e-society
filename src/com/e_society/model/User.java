@@ -28,13 +28,11 @@ import javax.persistence.Transient;
 public class User implements java.io.Serializable {
 
 	private String userId;
-	//private Member member;
 	private String userType;
 	private Date createdOn;
 	private String password;
 	private String firstname;
 	private String lastname;
-	//private Set<Member> members = new HashSet<Member>(0);
 	private String wing;
 	private String flat;
 	
