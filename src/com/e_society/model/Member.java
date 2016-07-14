@@ -77,7 +77,7 @@ public class Member implements java.io.Serializable {
 		}
 
 	@Id
-	@Column(name = "member_id", unique = true, nullable = false, length = 10)
+	@Column(name = "member_id", unique = true, nullable = false, length = 45)
 	public String getMemberId() {
 		return this.memberId;
 	}

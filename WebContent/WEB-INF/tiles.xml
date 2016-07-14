@@ -23,7 +23,6 @@
         <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/pages/memberCreate.jsp" />
     </definition>
-    
     <definition name="/userview.tiles" extends="baseLayout">
         <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/pages/userview.jsp" />
@@ -31,6 +30,10 @@
     <definition name="/memberview.tiles" extends="baseLayout">
         <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/pages/memberview.jsp" />
+    </definition>
+     <definition name="/notice.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/noticeCreate.jsp" />
     </definition>
     
     </tiles-definitions>

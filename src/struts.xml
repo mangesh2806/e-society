@@ -50,7 +50,9 @@
 		<action name="getCityAjax" class="com.banks24.action.UserAction" method="getCity">
 		  <result name="success" type="json"></result> 
 		</action>
- 		
+ 		<action name="addNoticeAction" class="memberaction" method="addMember">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
 		<action name="ajaxdemo"  
                 class="com.test.action.Test" 
                 method="myCustomMethod">
