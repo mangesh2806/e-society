@@ -29,13 +29,16 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO
 		List results = session.createCriteria(User.class).add(Restrictions.eq("userId", userid)).add(Restrictions.eq("password", passwotrds)).list();
 		if (results != null && results.size() > 0) {
 			instance = (User) results.get(0);
-			
+			session.close();
 		}
+		
 		
 		else
 		{
 			System.out.println("error");
+			session.close();
 			return "fail";
+			
 		}
 		
 		return "success";

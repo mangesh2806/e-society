@@ -42,7 +42,7 @@ public class UserTypeDAOImpl extends HibernateDaoSupport implements UserTypeDAO 
 		
 		List<String> usertypelist=cr.list();
 		System.out.println(usertypelist);
-	
+		session.close();
 		return usertypelist;
 	}
 }

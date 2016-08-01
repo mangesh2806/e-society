@@ -19,6 +19,7 @@ public class VisitorDAOImpl extends HibernateDaoSupport implements VisitorDAO
 			
 			getHibernateTemplate().saveOrUpdate(visitor);
 			tx.commit();
+			session.close();
 			
 		} catch (HibernateException re) {
 			session.close();

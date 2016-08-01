@@ -42,7 +42,9 @@ public class VisitorAction implements ModelDriven<Visitor>{
 	}
 	public String execute()
 	{
-		List<Flatdetails> flatdetailslist=flatdetailsdao.getFlatDetailList();
+		//List<Flatdetails> flatdetailslist=flatdetailsdao.getFlatDetailList();
+		
+		List<Flatdetails> flatdetailslist = null;
 		for (Flatdetails flatdetails2 : flatdetailslist) 
 		{
 			String flatno=flatdetails2.getFlatno();

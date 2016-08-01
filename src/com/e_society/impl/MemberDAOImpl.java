@@ -26,10 +26,12 @@ public class MemberDAOImpl extends HibernateDaoSupport implements MemberDAO {
 		try {
 			getHibernateTemplate().saveOrUpdate(member);
 			tx.commit();
+			session.close();
 			
 		} catch (HibernateException re) {
 			tx.rollback();
 			re.getMessage();
+			session.close();
 			//throw re;
 		}
 		
@@ -51,7 +53,7 @@ public List<String> getMemberList() {
 		cr.setProjection(prjlist);
 		List<String> memberList=cr.list();
 		System.out.println(memberList);
-	
+		session.close();
 		return memberList;
 
 	}

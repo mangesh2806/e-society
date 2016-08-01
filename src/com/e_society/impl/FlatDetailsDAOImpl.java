@@ -25,7 +25,7 @@ public class FlatDetailsDAOImpl extends HibernateDaoSupport implements FlatDetai
 		cr.setProjection(prjlist);
 		List<String> winglist=cr.list();
 		System.out.println(winglist);
-	
+		session.close();
 		return winglist;
 		
 	}
@@ -40,7 +40,7 @@ public class FlatDetailsDAOImpl extends HibernateDaoSupport implements FlatDetai
 		cr.setProjection(prjlist);
 		List<String> flatlist=cr.list();
 		System.out.println(flatlist);
-	
+		session.close();
 		return flatlist;
 
 	}
