@@ -23,6 +23,7 @@
             <th>Notice Description</th>
             <th>Notice Creation Date</th>
             <th>Notice Created by</th>
+            <th></th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +32,7 @@
             <td><s:property value="description" /></td>
             <td><s:property value="notice_date"/></td>
              <td><s:property value="createdBy"/></td>
-             
+             <td><a href=""><img src="..\img\pdf.jpg" height="50" width="50"/></a></td>
                            
            </tr>
           </s:iterator>
