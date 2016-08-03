@@ -15,5 +15,7 @@
   <mapping class="com.e_society.model.UserType"/>
   <mapping class="com.e_society.model.Member"/>
   <mapping class="com.e_society.model.Flatdetails"/>
+  <mapping class="com.e_society.model.Notice"/>
+  <mapping class="com.e_society.model.Visitor"/>
  </session-factory>
 </hibernate-configuration>

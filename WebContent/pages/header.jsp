@@ -62,7 +62,7 @@ $(document).ready(function () {
       <li><a href="pages/full-width.html">Notice Management</a>
       <ul>
           <li><a href="<%=request.getContextPath()%>/createNoticeAction">Notice Creation</a></li>
-          <li><a href="<%=request.getContextPath()%>/viewMemberAction">View Members</a></li>
+          <li><a href="<%=request.getContextPath()%>/viewNoticeAction">View Members</a></li>
           <li><a href="#">Link 3</a></li>
         </ul>
       </li>

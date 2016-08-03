@@ -41,6 +41,10 @@ public class Member implements java.io.Serializable {
 	private Date updatedOn;
 	private String serviceType;
 	private String companyName;
+	private double area;
+	private Character isOnRent;
+	
+	
 	//private Set<User> users = new HashSet<User>(0);
 
 	public Member() {

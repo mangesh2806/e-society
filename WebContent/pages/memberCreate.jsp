@@ -78,6 +78,14 @@ ol2">
             <label for="companyName"><small>Company Name (required)</small></label>
           </p>
           <p>
+            <input type="text" id="area" name="area"/>
+            <label for="area"><small>Area (required)</small></label>
+          </p>
+          <p>
+            <s:select name="isOnRent" id="isOnRent" list="{'YES','NO'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <label for="isOnRent"><small>Flat On Rent</small></label>
+          </p>
+          <p>
             <input name="submit" type="submit" id="submit" value="Submit Form" />
             &nbsp;
             <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />

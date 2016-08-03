@@ -23,6 +23,15 @@
      	 <property name="flatdetailsdao" ref="flatdetailsdao"></property>
      	 <property name="userdao" ref="userdao" />
      	    </bean>
+     	    
+     <bean id="noticeaction" class="com.e_society.action.NoticeAction">
+              <property name="noticeDAO" ref="noticeDAO" />  
+    </bean>
+    
+     <bean id="noticeDAO" class="com.e_society.impl.NoticeDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
     <bean id="memberdao" class="com.e_society.impl.MemberDAOImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>

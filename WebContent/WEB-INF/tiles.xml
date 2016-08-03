@@ -35,5 +35,9 @@
         <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/pages/noticeCreate.jsp" />
     </definition>
+    <definition name="/noticeview.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/noticeView.jsp" />
+    </definition>
     
     </tiles-definitions>
