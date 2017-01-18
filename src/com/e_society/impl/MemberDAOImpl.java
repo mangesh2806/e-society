@@ -6,8 +6,11 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.e_society.dao.MemberDAO;
@@ -57,5 +60,15 @@ public List<String> getMemberList() {
 		return memberList;
 
 	}
+
+public List<Member> populateMemberInformation(String memberId)
+{
+	List<Member> memberList=null;
+	Session session=getSession();
+	Criteria cr=session.createCriteria(Member.class).add(Restrictions.eq("memberId", memberId));
+	memberList=cr.list();
+	return memberList;
+}
+
 
 }

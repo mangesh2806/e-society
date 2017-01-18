@@ -7,6 +7,16 @@
 
 <title>PhotoFolio | Style Demo</title>
 <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script>
+function populateMemberInformation()
+{
+	 	
+	alert("Mangesh");
+	document.myform.action ="/e-society/populateMemberAction";
+    document.myform.submit();
+    alert("Manges1222h");
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
 <%-- <sj:head/> --%>
@@ -19,29 +29,31 @@ ol2">
         <div id="content">
         <h2>Create Member</h2>
       <div id="respond">
-        <form action="addMemberAction"  method="post" id="formSelectReload">
+        <form action="addMemberAction"  method="post" id="formSelectReload" name="myform">
         <p>
-            <s:select name="memberId" id="memberId" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+        <%-- <s:iterator value="populatememberList" var="member"> --%>
+            <s:select name="memberId" id="memberId" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0" onchange="populateMemberInformation();"></s:select>
             <label for="memberListdropdown"><small> Select Member (required)</small></label>
           </p>
             <p>
-            <input id="firstname" type="text" name="firstname"  />
+            
+            <s:textfield id="firstname" name="membertemp.firstname"></s:textfield>
             <label for="firstname"><small> First Name (required)</small></label>
           </p>
           <p>
-            <input id="lastname" type="text" name="lastname"  />
+            <s:textfield id="lastname" name="membertemp.lastname"></s:textfield>
             <label for="lastname"><small> Last Name (required)</small></label>
           </p>
           <p>
             <input type="text" id="phonenumber" name="phonenumber"/>
             <label for="phonenumber"><small>Phone Number (required)</small></label>
           </p><p>
-            <s:select name="flatNo" id="flatNo" list="flatlist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <s:select name="membertemp.flatNo" id="flatNo" list="flatlist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="flatNo"><small>Flat Number (required)</small></label>
           </p>
           
           <p>
-            <s:select name="wing" id="wing" list="winglist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <s:select name="membertemp.wing" id="wing" list="winglist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="wing"><small>Wing (required)</small></label>
           </p>
           
@@ -86,7 +98,8 @@ ol2">
             <label for="isOnRent"><small>Flat On Rent</small></label>
           </p>
           <p>
-            <input name="submit" type="submit" id="submit" value="Submit Form" />
+          <%-- </s:iterator> --%>
+            <input name="submitform" type="submit" id="submitform" value="Submit Form" />
             &nbsp;
             <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
           </p>

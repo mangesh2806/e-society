@@ -10,4 +10,5 @@ public interface MemberDAO
 	public void addmember(Member member);
 	List<Member> viewmember();
 	List<String> getMemberList();
+	List<Member> populateMemberInformation(String memberId);
 }

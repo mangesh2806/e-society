@@ -16,6 +16,7 @@ import com.e_society.model.Flatdetails;
 import com.e_society.model.Member;
 import com.e_society.model.User;
 import com.e_society.model.UserType;
+import com.e_society.util.Constants;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class UserAction implements ModelDriven<User> {
@@ -83,14 +84,12 @@ public class UserAction implements ModelDriven<User> {
 	public String adduser()
 	{
 		
-		String userid;
-		userid=user.getWing()+user.getFlat();
+		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Member member=new Member();
-		member.setMemberId(userid);
+		
 		Date date = new Date();
 		String logintime=dateFormat.format(date);
-		user.setUserId(userid);
+		
 		try {
 			Date date1=dateFormat.parse(logintime);
 			user.setCreatedOn(date1);
@@ -98,8 +97,32 @@ public class UserAction implements ModelDriven<User> {
 						e.printStackTrace();
 		}
 		/*MailSession.sendmail(user.getEmail(), user.getFirstname(), user.getLastname(), password);*/
-		userdao.adduser(user);
-		memberDao.addmember(member);
+		
+		if(user.getUserType().equals(Constants.MEMBERUSERTYPE))
+		{
+		
+			String memebrId=null;
+			memebrId = user.getWing() + user.getFlat();
+			
+			user.setUserId(memebrId);
+			userdao.adduser(user);
+			
+			Member member = new Member();
+			member.setMemberId(memebrId);
+			member.setFlatNo(user.getFlat());
+			member.setWing(user.getWing().charAt(0));
+			member.setFirstname(user.getFirstname());
+			member.setLastname(user.getLastname());
+			memberDao.addmember(member);
+		}
+		else if(user.getUserType().equals(Constants.ADMINUSERTYPE))
+		{
+			String userId=null;
+			userId=user.getFirstname()+user.getLastname();
+			user.setUserId(userId);
+			userdao.adduser(user);
+		}
+		
 		return "success";
 	}
 	public String viewuser()

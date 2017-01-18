@@ -14,7 +14,13 @@ public class MemberAction implements ModelDriven<Member> {
 
 	private MemberDAO memberdao;
 	private UserDAO userdao;
-	
+	private Member membertemp;
+	public Member getMembertemp() {
+		return membertemp;
+	}
+	public void setMembertemp(Member membertemp) {
+		this.membertemp = membertemp;
+	}
 	public void setUserdao(UserDAO userdao) {
 		this.userdao = userdao;
 	}
@@ -87,6 +93,23 @@ public class MemberAction implements ModelDriven<Member> {
 	}
 	public String editmember()
 	{
+		return "success";
+	}
+	
+	public String populateMemberInformation()
+	{
+		System.out.println("MEMBER ID:::::"+member.getMemberId());
+		List<Member> populatememberList=memberdao.populateMemberInformation(member.getMemberId());
+		
+		for(Member membertemp1:populatememberList)
+		{
+			membertemp.setFirstname(membertemp1.getFirstname());
+			membertemp.setLastname(membertemp1.getLastname());
+			membertemp.setWing(membertemp1.getWing());
+			membertemp.setFlatNo(membertemp1.getFlatNo());
+			
+		}
+		
 		return "success";
 	}
 

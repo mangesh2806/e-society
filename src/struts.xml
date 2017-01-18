@@ -38,6 +38,9 @@
 		<action name="createMemberAction" class="memberaction">
 		    <result name="success" type="tiles">/member.tiles</result>
 		</action>
+		<action name="populateMemberAction" class="memberaction" method="populateMemberInformation">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
 		<action name="addMemberAction" class="memberaction" method="addMember">
 		    <result name="success" type="tiles">/member.tiles</result>
 		</action>

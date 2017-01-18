@@ -38,6 +38,7 @@ public class User implements java.io.Serializable {
 	
 
 	@Transient
+	//@Column(name="wing",length=1,nullable=true)
 	public String getWing() {
 		return wing;
 	}
@@ -46,6 +47,7 @@ public class User implements java.io.Serializable {
 		this.wing = wing;
 	}
 	@Transient
+	//@Column(name="flatno",length=10,nullable=true)
 	public String getFlat() {
 		return flat;
 	}
