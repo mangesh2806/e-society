@@ -11,10 +11,11 @@
 function populateMemberInformation()
 {
 	 	
-	alert("Mangesh");
 	document.myform.action ="/e-society/populateMemberAction";
     document.myform.submit();
-    alert("Manges1222h");
+   
+    
+    
 }
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -32,28 +33,28 @@ ol2">
         <form action="addMemberAction"  method="post" id="formSelectReload" name="myform">
         <p>
         <%-- <s:iterator value="populatememberList" var="member"> --%>
-            <s:select name="memberId" id="memberId" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0" onchange="populateMemberInformation();"></s:select>
+            <s:select name="memberId" id="memberId" list="memberListdropdown" headerValue="-----Please Select 1-----" headerKey="0" onchange="populateMemberInformation();" ></s:select>
             <label for="memberListdropdown"><small> Select Member (required)</small></label>
           </p>
             <p>
             
-            <s:textfield id="firstname" name="membertemp.firstname"></s:textfield>
+            <s:textfield id="firstname" name="membertemp.firstname" disabled="true"></s:textfield>
             <label for="firstname"><small> First Name (required)</small></label>
           </p>
           <p>
-            <s:textfield id="lastname" name="membertemp.lastname"></s:textfield>
+            <s:textfield id="lastname" name="membertemp.lastname" disabled="true"></s:textfield>
             <label for="lastname"><small> Last Name (required)</small></label>
           </p>
           <p>
             <input type="text" id="phonenumber" name="phonenumber"/>
             <label for="phonenumber"><small>Phone Number (required)</small></label>
           </p><p>
-            <s:select name="membertemp.flatNo" id="flatNo" list="flatlist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <s:select name="membertemp.flatNo" id="flatNo" list="flatlist" disabled="true" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="flatNo"><small>Flat Number (required)</small></label>
           </p>
           
           <p>
-            <s:select name="membertemp.wing" id="wing" list="winglist" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <s:select name="membertemp.wing" id="wing" list="winglist" disabled="true" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="wing"><small>Wing (required)</small></label>
           </p>
           

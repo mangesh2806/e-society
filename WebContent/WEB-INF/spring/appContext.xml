@@ -21,7 +21,7 @@
     <bean id="memberaction" class="com.e_society.action.MemberAction">
         <property name="memberdao" ref="memberdao" />
      	 <property name="flatdetailsdao" ref="flatdetailsdao"></property>
-     	 <property name="userdao" ref="userdao" />
+     	 <!-- <property name="userdao" ref="userdao" /> -->
      	    </bean>
      	    
      <bean id="noticeaction" class="com.e_society.action.NoticeAction">

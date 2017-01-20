@@ -1,51 +1,35 @@
 package com.e_society.action;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.e_society.dao.FlatDetailsDAO;
 import com.e_society.dao.MemberDAO;
-import com.e_society.dao.UserDAO;
 import com.e_society.model.Member;
-import com.e_society.model.User;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class MemberAction implements ModelDriven<Member> {
 
 	private MemberDAO memberdao;
-	private UserDAO userdao;
-	private Member membertemp;
+	private Member membertemp=new Member();
+	private FlatDetailsDAO flatdetailsdao;
+	private Member member=new Member();;
+	private List<String> flatlist;
+	private List<String> winglist;
+	private List<Member> memberlist;
+	private List<String> memberListdropdown;
+	
+	
 	public Member getMembertemp() {
 		return membertemp;
 	}
 	public void setMembertemp(Member membertemp) {
 		this.membertemp = membertemp;
 	}
-	public void setUserdao(UserDAO userdao) {
-		this.userdao = userdao;
+	public Member getMember() {
+		return member;
 	}
-	public void setMemberdao(MemberDAO memberdao) {
-		this.memberdao = memberdao;
-	}
-	private FlatDetailsDAO flatdetailsdao;
-	public void setFlatdetailsdao(FlatDetailsDAO flatdetailsdao) {
-		this.flatdetailsdao = flatdetailsdao;
-	}
-	List<String> flatlist=new ArrayList<String>();
-	List<String> winglist=new ArrayList<String>();
-	List<Member> memberlist=new ArrayList<Member>();
-	List<String> memberListdropdown=new ArrayList<String>();
-	public List<Member> getMemberlist() {
-		return memberlist;
-	}
-	public void setMemberlist(List<Member> memberlist) {
-		this.memberlist = memberlist;
-	}
-	public List<String> getWinglist() {
-		return winglist;
-	}
-	public void setWinglist(List<String> winglist) {
-		this.winglist = winglist;
+	public void setMember(Member member) {
+		this.member = member;
 	}
 	public List<String> getFlatlist() {
 		return flatlist;
@@ -53,8 +37,25 @@ public class MemberAction implements ModelDriven<Member> {
 	public void setFlatlist(List<String> flatlist) {
 		this.flatlist = flatlist;
 	}
-	Member member=new Member();
-	User user=new User();
+	public List<String> getWinglist() {
+		return winglist;
+	}
+	public void setWinglist(List<String> winglist) {
+		this.winglist = winglist;
+	}
+	public List<Member> getMemberlist() {
+		return memberlist;
+	}
+	public void setMemberlist(List<Member> memberlist) {
+		this.memberlist = memberlist;
+	}
+	public void setMemberdao(MemberDAO memberdao) {
+		this.memberdao = memberdao;
+	}
+
+	public void setFlatdetailsdao(FlatDetailsDAO flatdetailsdao) {
+		this.flatdetailsdao = flatdetailsdao;
+	}
 	@Override
 	public Member getModel() {
 		// TODO Auto-generated method stub
@@ -75,14 +76,12 @@ public class MemberAction implements ModelDriven<Member> {
 	}
 	public String addMember()
 	{
-		//user.setUserId("C101");
 		
-		String memberId=member.getMemberId();
-		//user.setMemberId(memberId);
-		//member.setMemberId(memberId);
-		//member.setUser(user);
+		member.setFirstname(membertemp.getFirstname());
+		member.setLastname(membertemp.getLastname());
+		member.setWing(membertemp.getWing());
+		member.setFlatNo(membertemp.getFlatNo());
 		memberdao.addmember(member);
-		//userdao.adduser(user);
 		return "success";
 	}
 	public String viewMember()
@@ -98,7 +97,7 @@ public class MemberAction implements ModelDriven<Member> {
 	
 	public String populateMemberInformation()
 	{
-		System.out.println("MEMBER ID:::::"+member.getMemberId());
+		
 		List<Member> populatememberList=memberdao.populateMemberInformation(member.getMemberId());
 		
 		for(Member membertemp1:populatememberList)
