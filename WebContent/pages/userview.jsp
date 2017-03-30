@@ -33,7 +33,7 @@
             <td><s:property value="firstname"/></td>
              <td><s:property value="lastname"/></td>
              <td><s:property value="userType"/></td>
-             <td><a href="userEdit?id=<s:property value="userId"/>">edit</a></td>
+             <td><a href="editUserAction?id=<s:property value="userId"/>">edit</a></td>
            </tr>
           </s:iterator>
         </tbody>

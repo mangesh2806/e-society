@@ -35,6 +35,9 @@
 		<action name="viewUserAction" class="useraction" method="viewuser">
 		    <result name="success" type="tiles">/userview.tiles</result>
 		</action>
+		<action name="editUserAction" class="useraction" method="editUser">
+		    <result name="success" type="tiles">/user.tiles</result>
+		</action>
 		<action name="createMemberAction" class="memberaction">
 		    <result name="success" type="tiles">/member.tiles</result>
 		</action>

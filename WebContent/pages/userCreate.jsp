@@ -43,7 +43,8 @@ $(document).ready(function() {
           </p>
         
             <p>
-            <input id="firstname" type="text" name="firstname"  />
+            <!-- <input id="firstname" type="text" name="firstname"  /> -->
+            <s:textfield id="firstname" name="firstname" value="firstname"></s:textfield>:
             <label for="firstname"><small> First Name (required)</small></label>
           </p>
           <p>

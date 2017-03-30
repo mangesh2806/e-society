@@ -9,5 +9,6 @@ public interface UserDAO
 	public String loginCheck(String userid,String passwotrds);
 	public void adduser(User user);
 	List<User> viewuser();
+	List<User> getUserUserByUserId(String userId);
 
 }

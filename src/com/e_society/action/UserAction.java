@@ -28,6 +28,8 @@ public class UserAction implements ModelDriven<User> {
 	private UserTypeDAO usertypedao;
 	private FlatDetailsDAO flatdetailsdao;
 	private MemberDAO memberDao;
+	public String id;
+	
 	
 	public void setMemberDao(MemberDAO memberDao) {
 		this.memberDao = memberDao;
@@ -131,5 +133,33 @@ public class UserAction implements ModelDriven<User> {
 		return "success";
 		
 	}
+	
+	public String editUser()
+	{
+		
+		System.out.println(id);
+		String wing=String.valueOf(id.charAt(0));
+		winglist.add(wing);
+		String[] flatNoArray=id.split(wing);
+		String flatNo=null;
+		for(int i=0;i<flatNoArray.length;i++)
+		{
+			flatNo=flatNoArray[i];
+			flatlist.add(flatNo);
+		}
+		List<User> userList=userdao.getUserUserByUserId(id);
+		for(User usertemp: userList)
+		{
+			/*user.setWing(wing);
+			user.setFlat(flatNo);*/
+			user.setFirstname(usertemp.getFirstname());
+			user.setLastname(usertemp.getLastname());
+			usertypelist.add(usertemp.getUserType());
+			user.setPassword(usertemp.getPassword());
+			
+		}
+		return "success";
+	}
+	
 	
 }

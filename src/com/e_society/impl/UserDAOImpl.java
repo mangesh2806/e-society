@@ -68,6 +68,13 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO
 		return userlist;
 	}
 	
+	public List<User> getUserUserByUserId(String userId)
+	{
+		Session session=getSession();
+		List<User> userlist=session.createCriteria(User.class).add(Restrictions.eq("userId", userId)).list();
+		return userlist;
+	}
+	
 
 	
 }
