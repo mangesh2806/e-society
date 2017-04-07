@@ -26,9 +26,17 @@
      	    
      <bean id="noticeaction" class="com.e_society.action.NoticeAction">
               <property name="noticeDAO" ref="noticeDAO" />  
+     </bean>
+     
+     <bean id="billaction" class="com.e_society.action.BillAction">
+     <property name="billDAO" ref="billDAO"></property>
+     </bean>
+    
+     <bean id="billDAO" class="com.e_society.impl.BillDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
-     <bean id="noticeDAO" class="com.e_society.impl.NoticeDAOImpl">
+    <bean id="noticeDAO" class="com.e_society.impl.NoticeDAOImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     

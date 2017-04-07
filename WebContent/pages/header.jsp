@@ -74,7 +74,12 @@ $(document).ready(function () {
           <li><a href="#">Link 3</a></li>
         </ul>
       </li>
-      <li><a href="pages/portfolio.html">Portfolio</a></li>
+      <li><a href="#">Bill Management</a>
+      <ul>
+       <li><a href="<%=request.getContextPath()%>/createUserAction">Bill Creation</a></li>
+        <li><a href="<%=request.getContextPath()%>/viewUserAction">View Bill</a></li>
+      </ul>
+      </li>
       <li class="last"><a href="pages/gallery.html">Gallery</a></li>
     </ul>
     <form action="#" method="post" id="search">

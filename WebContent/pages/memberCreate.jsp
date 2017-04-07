@@ -13,9 +13,21 @@ function populateMemberInformation()
 	 	
 	document.myform.action ="/e-society/populateMemberAction";
     document.myform.submit();
-   
-    
-    
+}
+
+function disableFields()
+{
+	var parking=document.getElementById("parking");
+	if(parking.value == "NA")
+		{
+		document.getElementById('2wheelerparking').disabled=true;
+	    document.getElementById('4wheelerparking').disabled=true;
+		}
+	else if(parking.value != "NA")
+		{
+		document.getElementById('2wheelerparking').disabled=false;
+	    document.getElementById('4wheelerparking').disabled=false;
+		}
 }
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -98,6 +110,23 @@ ol2">
             <s:select name="isOnRent" id="isOnRent" list="{'YES','NO'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
             <label for="isOnRent"><small>Flat On Rent</small></label>
           </p>
+          
+           <p>
+            <s:select name="parking" id="parking" list="{'OWNED','SOCIETY','NA'}" headerValue="-----Please Select 1-----" headerKey="0" onchange="disableFields()"></s:select>
+            <label for="parking"><small>Parking</small></label>
+          </p>
+          
+           <p>
+            <s:select name="2wheelerparking" id="2wheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <label for="2wheelerparking"><small>Two Wheeler Parking</small></label>
+          </p>
+          
+           <p>
+            <s:select name="4wheelerparking" id="4wheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <label for="4wheelerparking"><small>Four Wheeler Parking</small></label>
+          </p>
+          
+          
           <p>
           <%-- </s:iterator> --%>
             <input name="submitform" type="submit" id="submitform" value="Submit Form" />

@@ -63,6 +63,11 @@
 		<action name="viewNoticeAction" class="noticeaction" method="viewNotice">
 		    <result name="success" type="tiles">/noticeview.tiles</result>
 		</action>
+		<action name="populateMemberInfoAction" class="memberaction" method="populateMemberInformation">
+		    <result name="success" type="tiles">/member.tiles</result>
+		</action>
+		
+		
 		<action name="getCityAjax" class="com.banks24.action.UserAction" method="getCity">
 		  <result name="success" type="json"></result> 
 		</action>

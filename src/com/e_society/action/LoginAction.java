@@ -2,6 +2,7 @@ package com.e_society.action;
 
 import java.util.Map;
 
+import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.e_society.dao.UserDAO;
@@ -12,7 +13,7 @@ public class LoginAction implements ModelDriven<User>,SessionAware
 {
 
 	private UserDAO userdao;
-	private Map<String,Object> session;
+	private SessionMap<String,Object> sessionMap;
 	User user=new User();
 	@Override
 	public User getModel() 
@@ -28,7 +29,7 @@ public class LoginAction implements ModelDriven<User>,SessionAware
 	public void setSession(Map<String, Object> session) 
 	
 	{
-		this.session=session;
+		this.sessionMap=(SessionMap)session;
 		
 	}
 	public String execute()
@@ -38,13 +39,22 @@ public class LoginAction implements ModelDriven<User>,SessionAware
 		String userid=user.getUserId();
 		String password=user.getPassword();
 		
-		session.put("userid", userid);
-		session.put("password", password);
+		sessionMap.put("userid", userid);
+		sessionMap.put("password", password);
 		String check=userdao.loginCheck(userid, password);
 		if(check.equals("fail"))
 		{
 			return "input";
 			
+		}
+		return "success";
+	}
+	
+	public String logout()
+	{
+		if(sessionMap!=null)
+		{
+			sessionMap.invalidate();
 		}
 		return "success";
 	}
