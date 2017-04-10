@@ -39,5 +39,13 @@
         <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/pages/noticeView.jsp" />
     </definition>
+    <definition name="/bill.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/billCreate.jsp" />
+    </definition>
+    <definition name="/billview.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/pages/billView.jsp" />
+    </definition>
     
     </tiles-definitions>

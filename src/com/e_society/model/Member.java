@@ -43,6 +43,10 @@ public class Member implements java.io.Serializable {
 	private String companyName;
 	private double area;
 	private Character isOnRent;
+	private String parking;
+	private int twowheelerparking;
+	private int fourwheelerparking;
+	
 	
 	
 	//private Set<User> users = new HashSet<User>(0);
@@ -245,6 +249,51 @@ public class Member implements java.io.Serializable {
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
+	}
+	
+	@Column(name = "area")
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+	
+	@Column(name = "isOnRent")
+	public Character getIsOnRent() {
+		return isOnRent;
+	}
+
+	public void setIsOnRent(Character isOnRent) {
+		this.isOnRent = isOnRent;
+	}
+	
+	@Column(name = "parking")
+	public String getParking() {
+		return parking;
+	}
+
+	public void setParking(String parking) {
+		this.parking = parking;
+	}
+
+	@Column(name="2wheelerparking")
+	public int getTwowheelerparking() {
+		return twowheelerparking;
+	}
+
+	public void setTwowheelerparking(int twowheelerparking) {
+		this.twowheelerparking = twowheelerparking;
+	}
+
+	@Column(name="4wheelerparking")
+	public int getFourwheelerparking() {
+		return fourwheelerparking;
+	}
+
+	public void setFourwheelerparking(int fourwheelerparking) {
+		this.fourwheelerparking = fourwheelerparking;
 	}
 
 

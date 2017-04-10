@@ -21,14 +21,14 @@ ol2">
       <div id="respond">
         <form action="populateMemberInfoAction"  method="post" id="formSelectReload">
             <p>
-            <s:select name="memberId" id="memberId" list="{'YES','NO'}" headerValue="-----Please Select -----" headerKey="0"></s:select>
-            <label for="memberId"><small>Flat On Rent</small></label>
+            <s:select name="memberId" id="memberId" list="memberlist" headerValue="-----Please Select -----" headerKey="0"></s:select>
+            <label for="memberId"><big>Select a Member to Create Bill</big></label>
           </p>
-         
            <p>
             <input name="submit" type="submit" id="submit" value="Submit Form" />
            </p>
-          </form>
+           </form>
+           
       </div>
     </div>
      

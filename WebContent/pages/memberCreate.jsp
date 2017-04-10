@@ -117,13 +117,13 @@ ol2">
           </p>
           
            <p>
-            <s:select name="2wheelerparking" id="2wheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
-            <label for="2wheelerparking"><small>Two Wheeler Parking</small></label>
+            <s:select name="twowheelerparking" id="twowheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <label for=twowheelerparking><small>Two Wheeler Parking</small></label>
           </p>
           
            <p>
-            <s:select name="4wheelerparking" id="4wheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
-            <label for="4wheelerparking"><small>Four Wheeler Parking</small></label>
+            <s:select name="fourwheelerparking" id="fourwheelerparking" list="{'1','2'}" headerValue="-----Please Select 1-----" headerKey="0"></s:select>
+            <label for="fourwheelerparking"><small>Four Wheeler Parking</small></label>
           </p>
           
           

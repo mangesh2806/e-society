@@ -30,6 +30,8 @@
      
      <bean id="billaction" class="com.e_society.action.BillAction">
      <property name="billDAO" ref="billDAO"></property>
+     <property name="memberDAO" ref="memberdao"></property>
+     
      </bean>
     
      <bean id="billDAO" class="com.e_society.impl.BillDAOImpl">

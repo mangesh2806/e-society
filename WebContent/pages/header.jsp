@@ -76,8 +76,8 @@ $(document).ready(function () {
       </li>
       <li><a href="#">Bill Management</a>
       <ul>
-       <li><a href="<%=request.getContextPath()%>/createUserAction">Bill Creation</a></li>
-        <li><a href="<%=request.getContextPath()%>/viewUserAction">View Bill</a></li>
+       <li><a href="<%=request.getContextPath()%>/createBillAction">Bill Creation</a></li>
+        <li><a href="<%=request.getContextPath()%>/viewBillAction">View Bill</a></li>
       </ul>
       </li>
       <li class="last"><a href="pages/gallery.html">Gallery</a></li>
