@@ -67,7 +67,7 @@
 		<action name="createBillAction" class="billaction">
 		    <result name="success" type="tiles">/bill.tiles</result>
 		</action>
-		<action name="populateMemberInfoAction" class="billaction" method="populateMemberInformation">
+		<action name="populateMemberInformationForBill" class="billaction" method="populateMemberInformationForBill">
 		    <result name="success" type="tiles">/bill.tiles</result>
 		</action>
 		
