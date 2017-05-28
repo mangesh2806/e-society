@@ -23,6 +23,7 @@
     </p>
 
     <p class="forgot-password"><a href="index.html">Forgot your password?</a></p>
+    <p class="forgot-password"><a href="<%=request.getContextPath()%>/createUserAction">Sign Up</a></p>
   </form>
 
   </body>

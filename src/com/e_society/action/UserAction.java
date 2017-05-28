@@ -120,7 +120,7 @@ public class UserAction implements ModelDriven<User> {
 		else if(user.getUserType().equals(Constants.ADMINUSERTYPE))
 		{
 			String userId=null;
-			userId=user.getFirstname()+user.getLastname();
+			userId=user.getFirstname()+"."+user.getLastname();
 			user.setUserId(userId);
 			userdao.adduser(user);
 		}

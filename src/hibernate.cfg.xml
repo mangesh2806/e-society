@@ -17,5 +17,6 @@
   <mapping class="com.e_society.model.Flatdetails"/>
   <mapping class="com.e_society.model.Notice"/>
   <mapping class="com.e_society.model.Visitor"/>
+  <mapping class="com.e_society.model.Bill"/>
  </session-factory>
 </hibernate-configuration>
