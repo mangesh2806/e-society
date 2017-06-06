@@ -6,6 +6,7 @@ import com.e_society.dao.BillDAO;
 import com.e_society.dao.MemberDAO;
 import com.e_society.model.Bill;
 import com.e_society.model.Member;
+import com.e_society.util.PropConfig;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class BillAction implements ModelDriven<Bill> {
@@ -19,8 +20,11 @@ public class BillAction implements ModelDriven<Bill> {
 	private List<String> memberlist;
 	private List<Member> memberinfolist;
 	private String memberId;
+	private PropConfig propConfig;
 	
-	
+	public void setPropConfig(PropConfig propConfig) {
+		this.propConfig = propConfig;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -73,6 +77,10 @@ public class BillAction implements ModelDriven<Bill> {
 		{
 			billtemp.setFirstName(member.getFirstname());
 			billtemp.setLastName(member.getLastname());
+			billtemp.setArea(member.getArea());
+			billtemp.setMaintenanceRate(Integer.parseInt(propConfig.getMaintenanceRate()));
+			
+			
 		}
 		return "success";
 	}

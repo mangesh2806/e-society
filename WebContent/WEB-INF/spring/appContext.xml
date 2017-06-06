@@ -2,8 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd" >
+	
+	
 		
 <bean id="loginaction" class="com.e_society.action.LoginAction">
         <property name="userdao" ref="userdao" />
@@ -31,6 +38,7 @@
      <bean id="billaction" class="com.e_society.action.BillAction">
      <property name="billDAO" ref="billDAO"></property>
      <property name="memberDAO" ref="memberdao"></property>
+     <property name="propConfig" ref="propConfig"></property>
      
      </bean>
     
@@ -69,6 +77,10 @@
         class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-
+    
+    <context:property-placeholder location="classpath:config.properties" />
+	<bean id="propConfig" class="com.e_society.util.PropConfig">
+	<property name="maintenanceRate" value="${config.maintenanceRate}"></property>
+	</bean>
 
 </beans>

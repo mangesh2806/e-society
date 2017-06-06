@@ -1,5 +1,6 @@
 package com.e_society.model;
 
+import javax.persistence.Transient;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -64,6 +65,12 @@ public class Bill
 	
 	@Column(name="interestOnArrears")
 	private int interestOnArrears;
+	
+	@Transient
+	private double area;
+	
+	@Transient
+	private int maintenanceRate;
 
 	public String getMemberId() {
 		return memberId;
@@ -191,6 +198,22 @@ public class Bill
 
 	public void setInterestOnArrears(int interestOnArrears) {
 		this.interestOnArrears = interestOnArrears;
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+
+	public int getMaintenanceRate() {
+		return maintenanceRate;
+	}
+
+	public void setMaintenanceRate(int maintenanceRate) {
+		this.maintenanceRate = maintenanceRate;
 	}
 	
 	}

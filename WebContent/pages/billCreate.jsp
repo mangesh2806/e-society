@@ -59,10 +59,16 @@ ol2">
             <label for="insuranceCharger">Insurance Charges:</label>
             <s:textfield id="insuranceCharger" name="billtemp.insuranceCharger"></s:textfield>
             
-            <label for="conveyance">Conveyance</label>
+            <label for="conveyance">Conveyance:</label>
             <s:textfield id="conveyance" name="billtemp.conveyance"></s:textfield><br>
             
-            <label for="maintainceCharger">Maintaince Charge:</label>
+            <label for="area">Area:</label>
+            <s:textfield id="area" name="billtemp.area"></s:textfield><br>
+            
+            <label for="maintenanceRate">Maintenance Rate/Square Foot:</label>
+            <s:textfield id="maintenanceRate" name="billtemp.maintenanceRate" disabled="true"></s:textfield><br>
+            
+            <label for="maintainceCharger">Maintaince Charge</label>
             <s:textfield id="maintainceCharger" name="billtemp.maintainceCharger"></s:textfield>
             
              <label for="parkingCharge">Parking Charge:</label>
