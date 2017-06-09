@@ -71,6 +71,10 @@
 		    <result name="success" type="tiles">/bill.tiles</result>
 		</action>
 		
+		<action name="createBill" class="billaction" method="createBill">
+		    <result name="success" type="tiles">/bill.tiles</result>
+		</action>
+		
 		<action name="getCityAjax" class="com.banks24.action.UserAction" method="getCity">
 		  <result name="success" type="json"></result> 
 		</action>

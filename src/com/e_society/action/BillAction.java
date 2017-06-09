@@ -96,9 +96,14 @@ public class BillAction implements ModelDriven<Bill> {
 			
 			billtemp.setParkingCharge(parkingCharge);
 			
-			billDAO.createBill(billtemp);
 			
 		}
+		return "success";
+	}
+	
+	public String createBill()
+	{
+		billDAO.createBill(billtemp);
 		return "success";
 	}
 

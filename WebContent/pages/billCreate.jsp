@@ -126,6 +126,10 @@ ol2">
            
             <label for="interestOnArrears">Interest On Arrears:</label>
              <s:textfield id="interestOnArrears" name="billtemp.interestOnArrears"></s:textfield>
+             
+            <input name="submit" type="submit" id="submit" value="Create Bill" />
+            &nbsp;
+            <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
             
            </form>
            </s:iterator>
