@@ -75,11 +75,28 @@ public class BillAction implements ModelDriven<Bill> {
 		memberinfolist=memberDAO.populateMemberInformation(bill.getMemberId());
 		for(Member member: memberinfolist)
 		{
+			billtemp.setMemberId(member.getMemberId());
 			billtemp.setFirstName(member.getFirstname());
 			billtemp.setLastName(member.getLastname());
 			billtemp.setArea(member.getArea());
 			billtemp.setMaintenanceRate(Integer.parseInt(propConfig.getMaintenanceRate()));
 			
+			
+			double maintainceCharge=member.getArea() * Integer.parseInt(propConfig.getMaintenanceRate());
+			billtemp.setMaintainceCharger(maintainceCharge);
+			
+			
+			billtemp.setTwowheelerparking(member.getTwowheelerparking());
+			billtemp.setFourwheelerparking(member.getFourwheelerparking());
+			billtemp.setFourwheelerparkingCharge(Integer.parseInt(propConfig.getFourwheelerparkingCharge()));
+			billtemp.setTwowheelerparkingCharge(Integer.parseInt(propConfig.getTwowheelerparkingCharge()));
+			
+			double parkingCharge= (member.getTwowheelerparking() * Integer.parseInt(propConfig.getTwowheelerparkingCharge()) ) +
+					(member.getFourwheelerparking() * Integer.parseInt(propConfig.getFourwheelerparkingCharge()) );
+			
+			billtemp.setParkingCharge(parkingCharge);
+			
+			billDAO.createBill(billtemp);
 			
 		}
 		return "success";

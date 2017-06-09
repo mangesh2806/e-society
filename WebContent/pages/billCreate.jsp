@@ -15,6 +15,31 @@ function populateMemberInformation()
     document.myform.submit();
 }
 
+function calculateMaintainceCharge()
+{
+	var rate=document.getElementById("maintenanceRate").value;
+	alert("Rate is:"+rate);
+	var area=document.getElementById("area").value;
+	alert("Area is:"+area);
+	var maintainceCharge=rate * area;
+	document.getElementById("maintainceCharger").value=maintainceCharge;
+}
+
+function calculateParkingCharge()
+{
+	var twowheelerparking=document.getElementById("twowheelerparking").value;
+	alert("twowheelerparking is:"+twowheelerparking);
+	var fourwheelerparking=document.getElementById("fourwheelerparking").value;
+	alert("fourwheelerparking is:"+fourwheelerparking);
+	var twowheelerparkingCharge=document.getElementById("twowheelerparkingCharge").value;
+	var fourwheelerparkingCharge=document.getElementById("fourwheelerparkingCharge").value;
+	
+	var parkingCharge=twowheelerparking * twowheelerparkingCharge + fourwheelerparking * fourwheelerparkingCharge;
+	alert("parkingCharge is:"+parkingCharge);
+	document.getElementById("parkingCharge").value=parkingCharge;
+	
+}
+
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -37,6 +62,8 @@ ol2">
            
            </form>
            <s:iterator value="memberinfolist" var="member">
+           
+           <form action="createBill"  method="post" id="formSelectReload" name="myform">
            
            	<label for="firstName">First Name:</label>
             <s:textfield id="firstName" name="billtemp.firstName"></s:textfield>
@@ -63,15 +90,29 @@ ol2">
             <s:textfield id="conveyance" name="billtemp.conveyance"></s:textfield><br>
             
             <label for="area">Area:</label>
-            <s:textfield id="area" name="billtemp.area"></s:textfield><br>
+            <s:textfield id="area" name="billtemp.area"></s:textfield>
             
             <label for="maintenanceRate">Maintenance Rate/Square Foot:</label>
             <s:textfield id="maintenanceRate" name="billtemp.maintenanceRate" disabled="true"></s:textfield><br>
             
             <label for="maintainceCharger">Maintaince Charge</label>
-            <s:textfield id="maintainceCharger" name="billtemp.maintainceCharger"></s:textfield>
+            <s:textfield id="maintainceCharger" name="billtemp.maintainceCharger"></s:textfield><br>
             
-             <label for="parkingCharge">Parking Charge:</label>
+            
+            <label for="twowheelerparking">Number of Two Whellers:</label>
+            <s:textfield id="twowheelerparking" name="billtemp.twowheelerparking"></s:textfield>
+            
+            <label for="fourwheelerparking">Number of Four Whellers:</label>
+            <s:textfield id="fourwheelerparking" name="billtemp.fourwheelerparking"></s:textfield><br>
+            
+            <label for="twowheelerparkingCharge">Two Wheller Parking Charge:</label>
+            <s:textfield id="twowheelerparkingCharge" name="billtemp.twowheelerparkingCharge" disabled="true" ></s:textfield>
+            
+            <label for="fourwheelerparkingCharge">Four Wheller Parking Charge:</label>
+            <s:textfield id="fourwheelerparkingCharge" name="billtemp.fourwheelerparkingCharge" disabled="true"></s:textfield><br>
+            
+            
+            <label for="parkingCharge">Parking Charge:</label>
             <s:textfield id="parkingCharge" name="billtemp.parkingCharge"></s:textfield><br>
            
             <label for="repairFund">Repair Fund:></label>
@@ -86,7 +127,7 @@ ol2">
             <label for="interestOnArrears">Interest On Arrears:</label>
              <s:textfield id="interestOnArrears" name="billtemp.interestOnArrears"></s:textfield>
             
-            
+           </form>
            </s:iterator>
            
       </div>

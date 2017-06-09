@@ -48,10 +48,10 @@ public class Bill
 	private int conveyance;
 	
 	@Column(name="maintainceCharger")
-	private int maintainceCharger;
+	private double maintainceCharger;
 	
 	@Column(name="parkingCharge")
-	private int parkingCharge;
+	private double parkingCharge;
 	
 	@Column(name="repairFund")
 	private int repairFund;
@@ -71,6 +71,18 @@ public class Bill
 	
 	@Transient
 	private int maintenanceRate;
+	
+	@Transient
+	private int twowheelerparking;
+	
+	@Transient 
+	int fourwheelerparking;
+	
+	@Transient 
+	int fourwheelerparkingCharge;
+	
+	@Transient 
+	int twowheelerparkingCharge;
 
 	public String getMemberId() {
 		return memberId;
@@ -152,19 +164,19 @@ public class Bill
 		this.conveyance = conveyance;
 	}
 
-	public int getMaintainceCharger() {
+	public double getMaintainceCharger() {
 		return maintainceCharger;
 	}
 
-	public void setMaintainceCharger(int maintainceCharger) {
+	public void setMaintainceCharger(double maintainceCharger) {
 		this.maintainceCharger = maintainceCharger;
 	}
 
-	public int getParkingCharge() {
+	public double getParkingCharge() {
 		return parkingCharge;
 	}
 
-	public void setParkingCharge(int parkingCharge) {
+	public void setParkingCharge(double parkingCharge) {
 		this.parkingCharge = parkingCharge;
 	}
 
@@ -214,6 +226,38 @@ public class Bill
 
 	public void setMaintenanceRate(int maintenanceRate) {
 		this.maintenanceRate = maintenanceRate;
+	}
+
+	public int getTwowheelerparking() {
+		return twowheelerparking;
+	}
+
+	public void setTwowheelerparking(int twowheelerparking) {
+		this.twowheelerparking = twowheelerparking;
+	}
+
+	public int getFourwheelerparking() {
+		return fourwheelerparking;
+	}
+
+	public void setFourwheelerparking(int fourwheelerparking) {
+		this.fourwheelerparking = fourwheelerparking;
+	}
+
+	public int getTwowheelerparkingCharge() {
+		return twowheelerparkingCharge;
+	}
+
+	public void setTwowheelerparkingCharge(int twowheelerparkingCharge) {
+		this.twowheelerparkingCharge = twowheelerparkingCharge;
+	}
+
+	public int getFourwheelerparkingCharge() {
+		return fourwheelerparkingCharge;
+	}
+
+	public void setFourwheelerparkingCharge(int fourwheelerparkingCharge) {
+		this.fourwheelerparkingCharge = fourwheelerparkingCharge;
 	}
 	
 	}

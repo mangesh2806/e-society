@@ -1,9 +1,8 @@
 package com.e_society.dao;
 
-import com.e_society.model.Member;
+import com.e_society.model.Bill;
 
 public interface BillDAO 
 {
-	public Member populateMemberInfo(String memberId);
-
+	public void createBill(Bill bill);
 }
